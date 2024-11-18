@@ -19,6 +19,9 @@ def buy_func(con: ConnectorSterling, symbol: str, size: int, price: float) -> No
     # Loop until we have bought the specified amount of shares
     while quantity > 0:
         
+        # get latest price here
+        # price = latest_price_func()
+
         # place the order
         ordId, status = con.send_limit(ACCOUNT, symbol, quantity, price, ROUTE, SIDE)
 
